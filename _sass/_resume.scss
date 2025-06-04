@@ -4,8 +4,9 @@
 // util
 
 .section-header {
-  @include section_border;
   margin-bottom: 1.5rem;
+  border-bottom: 2px solid #333;  // 원하는 두께와 색상으로 조절 가능
+  padding-bottom: 0.5rem;          // 줄과 텍스트 간격 조절
 
   h2 {
     @include sans;
@@ -134,7 +135,7 @@
 
   .resume-item-details {
     font-size: 1.125rem;
-    margin: 0 0 .75rem;
+    margin: 0 0 .25rem;
     line-height: 1;
   }
 
@@ -154,7 +155,234 @@
     }
   }
 
-  .resume-item-copy { margin: .75rem 0 0; }
+  .resume-item-copy { margin: .2rem 0 0; }
+
+
+.publication-block {
+  display: flex;
+  flex-direction: column; // 이미지를 위로, 내용을 아래로 배치
+  // align-items: flex-start; // 제거하여 자식 요소들이 가로로 늘어나도록 (기본값 stretch)
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .publication-image {
+    // flex: 1; // flex 아이템 크기 조정 제거
+    // margin-right: 20px; // 오른쪽 여백 제거
+    margin-bottom: 15px; // 이미지 하단 여백 추가
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block; // 이미지 하단 불필요한 공간 제거 및 정렬 용이
+    }
+  }
+
+  .publication-block {
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-image {
+            margin-bottom: 15px;
+        }
+
+        .publication-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .publication-details {
+            width: 100%;
+        }
+
+        .publication-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .publication-title:hover {
+            color: #e74c3c;
+        }
+
+        .publication-authors {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            color: #34495e;
+        }
+
+        .publication-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 0 10px 0;
+            color: #7f8c8d;
+        }
+
+        .publication-links {
+            margin-top: 10px;
+        }
+
+        .link-icon {
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .link-icon img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            transition: opacity 0.3s;
+        }
+
+        .link-icon:hover img {
+            opacity: 0.7;
+        }
+
+  // Responsive design for smaller screens
+  @media (max-width: 768px) {
+    // flex-direction: column; // 기본 스타일로 이동되었으므로 제거
+    padding: 15px;
+
+    .publication-image {
+      // margin-right: 0; // 불필요
+      // margin-bottom: 15px; // 기본 스타일로 이동되었으므로 제거
+    }
+
+    .publication-details {
+      .publication-title {
+        font-size: 18px;
+      }
+
+      .publication-authors {
+        font-size: 14px;
+      }
+
+      .publication-description {
+        font-size: 13px;
+      }
+
+      .publication-links {
+        .link-icon {
+          font-size: 16px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+.preprint-block {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+
+      &:before {
+        content: "• ";
+        color: #2c3e50;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .publication-links {
+      margin-top: 10px;
+
+      .link-icon {
+        margin-right: 10px;
+        text-decoration: none;
+
+        img {
+          width: 24px; // 아이콘 크기 조정 (필요에 따라 변경)
+          height: 24px;
+          vertical-align: middle; // 텍스트와 정렬
+          transition: opacity 0.3s; // 호버 효과
+        }
+
+        &:hover {
+          img {
+            opacity: 0.7; // 호버 시 약간 투명해짐
+          }
+        }
+
+        &.arxiv-icon {
+          // 추가 스타일링 필요 시 (예: 특정 색상 필터)
+        }
+
+        &.github-icon {
+          // 추가 스타일링 필요 시
+        }
+      }
+    }
+    }
+  }
+
+  .link-icon {
+        margin-right: 10px;
+        text-decoration: none;
+
+        img {
+          width: 24px; // 아이콘 크기 조정 (필요에 따라 변경)
+          height: 24px;
+          vertical-align: middle; // 텍스트와 정렬
+          transition: opacity 0.3s; // 호버 효과
+        }
+
+        &:hover {
+          img {
+            opacity: 0.7; // 호버 시 약간 투명해짐
+          }
+        }
+
+        &.arxiv-icon {
+          // 추가 스타일링 필요 시 (예: 특정 색상 필터)
+        }
+
+        &.github-icon {
+        
+        }
+      }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 10px;
+    font-size: 14px;
+
+    li {
+      margin-bottom: 8px;
+
+      .arxiv-button {
+        font-size: 12px;
+        padding: 1px 6px;
+      }
+    }
+  }
+}
 }
 
 // footer styles

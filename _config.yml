@@ -1,5 +1,5 @@
 # Site settings
-title: "Jekyll Resume Template"
+title: "Woojin Shin"
 description: "A resume template for Jekyll and GitHub Pages sites."
 
 # Build settings
@@ -34,13 +34,16 @@ resume_section_associations:    true
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
-  resume_github_url:            "https://github.com/woozee321"
+  resume_github_url:            "https://github.com/woozee-hub"
+  resume_mail:                  "woozee321@gmail.com"
+  resume_scholar:               "https://scholar.google.com/citations?user=fDzyKfkAAAAJ&hl=ko&authuser=1"
+  resume_cv:                    "https://drive.google.com/file/d/1nlU_APOD8Vv_etLn1P6xtmRj5_u_lccu/view?usp=sharing"
   # resume_twitter_url:           "http://twitter.com/jglovier"
   # resume_dribbble_url:          "https://dribbble.com/jag"
   # resume_facebook_url:          "insert Facebook URL here"
-  resume_linkedin_url:          "https://www.linkedin.com/in/woozee-hub"
+  resume_linkedin_url:          "https://www.linkedin.com/in/woozee"
   # resume_instagram_url:         "insert your Instagram URL here"
-  resume_website_url:           "https://woozee-hub.github.io/"
+  # resume_website_url:           "https://woozee-hub.github.io/"
 
 # Design settings
 resume_theme:                   default
